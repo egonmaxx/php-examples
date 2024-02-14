@@ -185,4 +185,129 @@ class Algorithms
         }
         return $string;
     }
+    
+    /**
+     * addFramingStringWithItsLastChar
+     * 9. Write a PHP program to create a new string with the last char added at the front and back of a given string of length 1 or more.
+     * Sample Input:
+     * "Red"
+     * "Green"
+     * "1"
+     * Sample Output:
+     * dRedd
+     * nGreenn
+     * 111
+     *
+     * @param  string $string
+     * @return string
+     */
+    public function addFramingStringWithItsLastChar(string $string):string
+    {
+        $lastChar = substr($string,-1);
+        return $lastChar.$string.$lastChar;
+    }
+    
+    /**
+     * checkNumberIfMultipleOfThreeOrSeven
+     * 
+     * 10. Write a PHP program to check if a given positive number is a multiple of 3 or a multiple of 7.
+     * Sample Input
+     * 3
+     * 14
+     * 12
+     * 37
+     * Sample Output:
+     * bool(true)
+     * bool(true)
+     * bool(true)
+     * bool(false)
+     *
+     * @param  mixed $integer
+     * @return int
+     */
+    public function checkNumberIfMultipleOfThreeOrSeven(int $integer):int
+    {
+        if ((($integer % 3) === 0) || (($integer % 7) === 0)) {
+            return true;
+        }
+
+        return false;
+    }
+    
+    /**
+     * framingStringWithItsFirstThreeChars
+     * 
+     * 11. Write a PHP program to create a new string taking the first 3 characters of a given string and return the string with the 3 characters added at both the front and back. If the given string length is less than 3, use whatever characters are there.
+     * Sample Input:
+     * "Python"
+     * "JS"
+     * "Code"
+     * Sample Output:
+     * PytPythonPyt
+     * JSJSJS
+     * CodCodeCod
+     *
+     * @param  string $string
+     * @return string
+     */
+    public function framingStringWithItsFirstThreeChars(string $string):string
+    {
+        if (strlen($string) >= 3) {
+            $firstThreeChar = substr($string,0,3);
+            return $firstThreeChar.$string.$firstThreeChar;
+        } 
+        
+        return $string.$string.$string;
+    }
+    
+    /**
+     * checkStringIsStartedWithCSharp
+     * 
+     * 12. Write a PHP program to check if a given string starts with 'C#' or not.
+     * Sample Input:
+     * "PHP"
+     * "C#"
+     * "C++"
+     * Sample Output:
+     * bool(true)
+     * bool(true)
+     * bool(false)
+     *
+     * @param  mixed $string
+     * @return bool
+     */
+    public function checkStringIsStartedWithCSharp(string $string): bool
+    {
+        if (substr($string,0,2) === 'C#') {
+            return true;
+        }
+        return false;
+    }
+    
+    /**
+     * checkTemperatures
+     *
+     * 13. Write a PHP program to check if one given temperatures is less than 0 and the other is greater than 100.
+     * Sample Input:
+     * 120, -1
+     * -1, 120
+     * 2, 120
+     * Sample Output:
+     * bool(true)
+     * bool(true)
+     * bool(false)
+     * @param  int $temperatureFirst
+     * @param  int $temperatureSecond
+     * @return bool
+     */
+    public function checkTemperatures(int $temperatureFirst, int $temperatureSecond):bool
+    {
+        if ($temperatureFirst > $temperatureSecond && $temperatureFirst > 100 && $temperatureSecond < 0)
+        {
+            return true;
+        } else if ($temperatureFirst < $temperatureSecond && $temperatureFirst < 0 && $temperatureSecond > 100) {
+            return true;
+        }
+        return false;
+    }
 }
